@@ -1,0 +1,302 @@
+#horscampus-btn {
+    font-size: 16px;
+}
+
+header {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header button {
+    background-color: #fff;
+    color: #ff0000;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div {
+margin-top: 0px;
+border-top: 0px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.home-button {
+    margin-top: 20px; /* Ajoutez une marge en haut pour espacer du header */
+    text-align: center;
+}
+
+.home-button button {
+    width: 50px; /* Augmentez la largeur du bouton pour accommoder l'image agrandie */
+    height: 50px; /* Ajustez la hauteur en conséquence */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Couleur de fond du bouton */
+    border: 1px solid #ccc; /* Bordure du bouton */
+    border-radius: 50%; /* Coins arrondis pour créer un aspect de cercle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+}
+
+.home-button img {
+    width: 50px; /* Ajustez la taille de l'image agrandie */
+}
+
+.home-button p {
+    margin-top: 5px;
+    font-size: 12px; /* Taille de la police du texte du bouton */
+}
+
+.time {
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+a {
+color: #ff0000;
+text-decoration: none;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+}
+
+.calendar {
+max-width: 300px;
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 10px;
+}
+
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+
+#monthYear {
+font-size: 1.5em;
+}
+
+button {
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-size: 16px;
+}
+
+.days {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 5px;
+}
+
+.day {
+text-align: center;
+padding: 5px;
+cursor: pointer;
+border: 1px solid #ccc;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+}
+
+h1 {
+
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Styles for the work hours form */
+.work-hours-form {
+    max-width: 300px;
+    margin: 50px auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.work-hours-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.work-hours-form label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.work-hours-form input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.work-hours-form button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.work-hours-form button:hover {
+    background-color: #990000;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .work-hours-form {
+        max-width: 90%;
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.popup h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.popup input[type="radio"] {
+    margin-right: 10px;
+}
+
+.popup button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.popup button:hover {
+    background-color: #990000;
+}
+
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+        /* Style pour le menu déroulant */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content button {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            background-color: inherit;
+            cursor: pointer;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #ddd;
+        }

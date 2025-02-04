@@ -1,0 +1,239 @@
+.inactive {
+    color: #aaa;
+}
+
+
+.good {
+    background-color: rgb(0, 192, 0);
+    }
+
+    .suspect {
+        background-color: rgb(255, 115, 0); /* Changez cela selon vos besoins */
+    }
+
+    .bad {
+        background-color: #ff0000;
+    }
+
+/* Ajoutez ce style pour changer la taille du nom dans l'en-tête */
+#name {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.home-button {
+    margin-top: 20px; /* Ajoutez une marge en haut pour espacer du header */
+    text-align: center;
+}
+
+.home-button button {
+    width: 50px; /* Augmentez la largeur du bouton pour accommoder l'image agrandie */
+    height: 50px; /* Ajustez la hauteur en conséquence */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Couleur de fond du bouton */
+    border: 1px solid #ccc; /* Bordure du bouton */
+    border-radius: 50%; /* Coins arrondis pour créer un aspect de cercle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+}
+
+.home-button img {
+    width: 50px; /* Ajustez la taille de l'image agrandie */
+}
+
+.home-button p {
+    margin-top: 5px;
+    font-size: 12px; /* Taille de la police du texte du bouton */
+}
+
+/* Styles CSS pour la mise en page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header button {
+    background-color: #fff;
+    color: #ff0000;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+#name {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.time {
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calendar {
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#monthYear {
+    font-size: 1.5em;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.day:hover {
+    background-color: #fff;
+    color: #ff0000;
+    border: 1px solid #ff0000; /* Ajustez la largeur de la bordure au survol */
+    transition: none; /* Désactive la transition au survol */
+}
+
+.name {
+    font-size: 16px;
+}
+
+#prevBtn,
+#nextBtn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+    background-color: #fff;
+    color: black;
+    border: 1px solid #ff0000;
+}
+
+.inactive {
+    color: #aaa;
+}
+
+.inactive-weekend {
+    background-color: #fff;
+    color: #999;
+    /* Couleur de texte grise pour les jours du week-end inactifs */
+    pointer-events: none;
+    /* Désactive les événements du pointeur (rendant les jours du week-end non cliquables) */
+}
+
+.bad {
+    background-color: #ff0000;
+}
+
+.suspect {
+    background-color: rgb(255, 115, 0); /* Changez cela selon vos besoins */
+}
+
+.good {
+    background-color: rgb(0, 192, 0);
+    }
+
+    .inactive-weekend {
+        color: #999;
+        /* Couleur de texte grise pour les jours du week-end inactifs */
+        pointer-events: none;
+        /* Désactive les événements du pointeur (rendant les jours du week-end non cliquables) */
+        background-color: #fff
+    }
+
+    .inactive {
+        color: #aaa;
+    }
+    

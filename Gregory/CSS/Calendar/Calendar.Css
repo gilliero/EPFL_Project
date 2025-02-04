@@ -1,0 +1,178 @@
+.inactive-weekend {
+    color: #999;
+    /* Couleur de texte grise pour les jours du week-end inactifs */
+    pointer-events: none;
+    /* Désactive les événements du pointeur (rendant les jours du week-end non cliquables) */
+}
+
+.inactive {
+    color: #aaa;
+}
+
+.good {
+    background-color: rgb(0, 192, 0);
+    }
+
+    .suspect {
+        background-color: rgb(255, 115, 0); /* Changez cela selon vos besoins */
+    }
+
+    .bad {
+        background-color: #ff0000;
+    }
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+.calendar {
+    max-width: 900px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#monthYear {
+    font-size: 24px;
+    text-align: center; /* Center the month and year */
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#prevBtn, #nextBtn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    background-color: #fff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+}
+
+.day {
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.day:hover {
+    background-color: #f2f2f2;
+    transition: none;
+}
+
+
+    .bad {
+        background-color: #ff0000;
+    }
+
+    .suspect {
+        background-color: rgb(255, 115, 0); /* Changez cela selon vos besoins */
+    }
+
+    .good {
+        background-color: rgb(0, 192, 0);
+        }
+
+      
+
+        .inactive-weekend {
+            color: #999;
+            /* Couleur de texte grise pour les jours du week-end inactifs */
+            pointer-events: none;
+            /* Désactive les événements du pointeur (rendant les jours du week-end non cliquables) */
+            background-color: #fff
+        }
+
+        .inactive {
+            color: #aaa;
+        }
+
+        .bad-carrer {
+            width: 15px;
+            height: 15px;
+            background-color: #ff0000;
+        }
+
+        .good-carrer {
+            width: 15px;
+            height: 15px;
+            background-color:rgb(0, 192, 0);
+        }
+
+        .suspect-carrer {
+            width: 15px;
+            height: 15px;
+            background-color:rgb(255, 115, 0);
+        }
+
+        .carrer {
+            margin-left: 400px;
+        }
+        
+         /* Style pour le menu déroulant */
+         .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content button {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            background-color: inherit;
+            cursor: pointer;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #ddd;
+        }

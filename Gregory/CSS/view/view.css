@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #fff;
+    color: #ff0000;
+    padding: 15px 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffcccc;
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ff0000;
+}
+
+
+.home-button img {
+    width: 50px; /* Ajustez la taille de l'image agrandie */
+}
+
+.centered-div {
+    margin: 0 auto;
+    width: 50%; /* ou ajustez la largeur selon vos besoins */
+    text-align: center;
+}
+
+ /* Ajout d'un espacement entre les colonnes du tableau */
+ table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px; /* Ajustez l'espacement selon vos préférences */
+    border-bottom: 1px solid #ddd; /* Ligne de séparation entre les lignes */
+}
+
+        /* Style pour le menu déroulant */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content button {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            background-color: inherit;
+            cursor: pointer;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #ddd;
+        }
