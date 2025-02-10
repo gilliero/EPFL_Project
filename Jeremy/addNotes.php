@@ -375,19 +375,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && $_GET["acti
             ?>
         </table>
         <br>
-        <button id="exportPDF">Exporter en PDF</button>
+        <button id="exportPDF" onclick="exportPDF()">Exporter en PDF</button>
         <a href="logout.php">Se déconnecter</a>
 
         <div id="editPopup" class="popup">
-            <form id="editForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <input type="hidden" name="action" value="edit">
-                <input type="hidden" name="note_id" id="editNoteId">
-                <label for="new_note">Nouvelle Note :</label>
-                <input type="number" name="new_note" id="newNote" step="0.1" min="1" max="6" required oninput="validateNoteEdit(this)">
-                <br><br>
-                <input type="submit" value="Modifier">
-            </form>
-        </div>
+    <form id="editForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <input type="hidden" name="action" value="edit">
+        <input type="hidden" name="note_id" id="editNoteId">
+        <label for="new_note">Nouvelle Note :</label>
+        <input type="number" name="new_note" id="newNote" step="0.1" min="1" max="6" required>
+        <br><br>
+        <input type="submit" value="Modifier">
+        <button type="button" onclick="closeEditPopup()">Annuler</button>
+    </form>
+</div>
+
 
         <script>
             function validateNote(input) {
@@ -414,63 +416,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && $_GET["acti
     document.getElementById("editPopup").style.display = "block";
 }
 
-document.getElementById("exportPDF").addEventListener("click", function(event) {
-    event.preventDefault();
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    const userName = "<?php echo $_SESSION['username']; ?>";
-    const currentDate = new Date().toLocaleDateString('fr-CA').replace(/-/g, '');
-    const fileName = `Notes_${userName.replace(/\s+/g, '')}_${currentDate}.pdf`;
-
-    const groups = <?php echo json_encode($modules); ?>;
-    const notesByBranche = <?php echo json_encode($notesByBranche); ?>;
-    let yOffset = 30;
-
-    for (const [groupLabel, groupBranches] of Object.entries(groups)) {
-        doc.setFontSize(16);
-        doc.text(groupLabel, 20, yOffset);
-        yOffset += 10;
-
-        const tableData = [];
-        for (const branch of groupBranches) {
-            if (notesByBranche[branch]) {
-                const notes = notesByBranche[branch];
-                const average = (Object.values(notes).reduce((a, b) => a + parseFloat(b), 0) / Object.values(notes).length).toFixed(2);
-                tableData.push([branch, Object.values(notes).join(" / "), average]);
-            }
-        }
-
-        if (tableData.length > 0) {
-            doc.autoTable({
-                head: [['Branche', 'Notes', 'Moyenne']],
-                body: tableData,
-                startY: yOffset,
-                styles: { halign: 'center', fillColor: [230, 230, 250] },
-                headStyles: { fillColor: [0, 57, 107] },
-            });
-            yOffset = doc.autoTable.previous.finalY + 10;
-        }
-
-        const groupNotes = [];
-        groupBranches.forEach(branch => {
-            if (notesByBranche[branch]) {
-                groupNotes.push(...Object.values(notes));
-            }
-        });
-        if (groupNotes.length > 0) {
-            const groupAverage = (groupNotes.reduce((a, b) => a + parseFloat(b), 0) / groupNotes.length).toFixed(2);
-            doc.text(`Moyenne ${groupLabel}`, 20, yOffset);
-            doc.text(groupAverage, 150, yOffset);
-            yOffset += 10;
-        }
-
-        yOffset += 20;
+function closeEditPopup() {
+        document.getElementById("editPopup").style.display = "none";
     }
 
-    doc.save(fileName);
-
-
-            });
+         // Fonction pour exporter en PDF
+         function exportPDF() {
+            // Redirige vers exportPDF.php avec l'ID de l'utilisateur
+            window.location.href = "./exportPDFNote.php?user_id=<?php echo $_SESSION['user_id']; ?>&branche=<?php echo $branche;?>&note=<?php echo $noteValue;?>&user_id=<?php echo $user_id;?>";
+        }
         </script>
     </main>
 </body>
