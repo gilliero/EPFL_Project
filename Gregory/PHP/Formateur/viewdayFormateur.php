@@ -204,17 +204,13 @@ function traduireDateEnFrancais($date) {
             echo "</form>";
             echo "</td>";
             
-            // Afficher le bouton Supprimer
-            echo "<td>";
-            echo '<form action="delete.php?annee=' . $annee . '&id_user=' . $id . '&semaine=' . $semaine . '" method="get">';
-            echo '<input type="hidden" name="date" value="' . htmlspecialchars($date_brute) . '">';
-            echo '<input type="hidden" name="id" value="' . htmlspecialchars($id) . '">';
-            echo '<input type="hidden" name="semaine" value="' . htmlspecialchars($semaine) . '">';
-            echo '<input type="hidden" name="annee" value="' . htmlspecialchars($annee) . '">';
-            echo '<button type="submit">Supprimer</button>';
-            echo "</form>";
-            echo "</td>";
-            echo "</tr>";
+// Récupérer les timbrages en JSON pour le jour
+$timbrages_json = json_encode($timbrages);
+
+echo "<td>";
+echo '<button type="button" onclick=\'openDeleteModal("'.htmlspecialchars($date_brute).'", "'.htmlspecialchars($id).'", "'.htmlspecialchars($semaine).'", "'.htmlspecialchars($annee).'", '.$timbrages_json.')\'>Supprimer</button>';
+echo "</td>";
+
         }
 
         echo "</table>";
@@ -222,6 +218,89 @@ function traduireDateEnFrancais($date) {
 
         ?>
     </main>
+    <!-- Fenêtre modale pour la suppression -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Supprimer un timbrage</h2>
+        <form id="deleteForm" method="get" action="delete.php">
+            <input type="hidden" name="id" id="deleteUserId">
+            <input type="hidden" name="date" id="deleteDate">
+            <input type="hidden" name="semaine" id="deleteSemaine">
+            <input type="hidden" name="annee" id="deleteAnnee">
+            <p>Veuillez sélectionner le timbrage à supprimer :</p>
+            <div id="timbragesList"></div>
+            <button type="submit">Supprimer</button>
+        </form>
+    </div>
+</div>
+
+<!-- Styles pour la modale -->
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 10% auto;
+        padding: 20px;
+        width: 40%;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .close {
+        float: right;
+        font-size: 28px;
+        cursor: pointer;
+    }
+</style>
+<script>
+    function openDeleteModal(date, id, semaine, annee, timbrages) {
+        document.getElementById("deleteUserId").value = id;
+        document.getElementById("deleteDate").value = date;
+        document.getElementById("deleteSemaine").value = semaine;
+        document.getElementById("deleteAnnee").value = annee;
+
+        let timbragesListDiv = document.getElementById("timbragesList");
+        timbragesListDiv.innerHTML = ""; // Vider la liste avant d'ajouter des éléments
+
+        if (timbrages.length > 0) {
+            timbrages.forEach(function(timbrage) {
+                let radioBtn = document.createElement("input");
+                radioBtn.type = "radio";
+                radioBtn.name = "timbrage";
+                radioBtn.value = timbrage.heure;
+                
+                let label = document.createElement("label");
+                label.textContent = `${timbrage.heure} (${timbrage.type})`;
+                
+                let lineBreak = document.createElement("br");
+
+                timbragesListDiv.appendChild(radioBtn);
+                timbragesListDiv.appendChild(label);
+                timbragesListDiv.appendChild(lineBreak);
+            });
+        } else {
+            timbragesListDiv.innerHTML = "<p>Aucun timbrage pour ce jour.</p>";
+        }
+
+        document.getElementById("deleteModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("deleteModal").style.display = "none";
+    }
+</script>
+
     <script>
         // Fonction de déconnexion
         function logout() {

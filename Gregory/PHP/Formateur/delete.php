@@ -23,24 +23,24 @@ if ($connexion->connect_error) {
     die("La connexion à la base de données a échoué : " . $connexion->connect_error);
 }
 
+// Récupérer les paramètres depuis l'URL
+$semaine = isset($_GET['semaine']) ? intval($_GET['semaine']) : date('W');
+$annee = isset($_GET['annee']) ? intval($_GET['annee']) : date('Y');
+$date = isset($_GET['date']) ? $_GET['date'] : '';
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$heure = isset($_GET['timbrage']) ? $_GET['timbrage'] : '';
 
+// Vérifie si tous les paramètres nécessaires sont fournis
+if (empty($date) || empty($id) || empty($heure)) {
+    die("Paramètres manquants pour la suppression.");
+}
 
-
- // Récupérer la semaine et l'année depuis le lien
- $semaine = isset($_GET['semaine']) ? intval($_GET['semaine']) : date('W');
- $annee = isset($_GET['annee']) ? intval($_GET['annee']) : date('Y');
- $date = isset($_GET['date']) ? $_GET['date'] : '';
- $id = isset($_GET['id']) ? $_GET['id'] : '';
-
-// Exécuter la suppression
+// Exécuter la suppression du timbrage sélectionné
 $supprimerRequete = "
-    DELETE t1 FROM t_timbrage t1
-    INNER JOIN (
-        SELECT MAX(position_timbrage) as max_position
-        FROM t_timbrage
-        WHERE date_timbrage = '$date' AND ID_personne = '$id'
-    ) t2 ON t1.position_timbrage = t2.max_position
-    WHERE t1.date_timbrage = '$date' AND t1.ID_personne = '$id'
+    DELETE FROM t_timbrage
+    WHERE date_timbrage = '$date'
+    AND ID_personne = '$id'
+    AND heure_timbrage = '$heure'
 ";
 
 if ($connexion->query($supprimerRequete) === TRUE) {
