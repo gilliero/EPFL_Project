@@ -14,49 +14,51 @@ if ($conn->connect_error) {
     die("Erreur de connexion à la base de données : " . $conn->connect_error);
 }
 
-// Récupérer les données du formulaire (assurez-vous de les filtrer et valider correctement)
+// Récupérer les données du formulaire
 $type = $_POST['type'] ?? '';
 $timestamp = $_POST['timestamp'] ?? '';
 
 // Séparer la date et l'heure
 list($date, $heure) = explode(" ", $timestamp);
-
-// Déclaration de la date
 $date = date("Y/m/d");
 
-// Déclaration de l'utilisateur connecté (assurez-vous que $_SESSION['user_id'] est défini)
+// Récupérer l'ID de l'utilisateur connecté
 $id = $_SESSION['user_id'] ?? null;
-
 if (!$id) {
     die("Utilisateur non connecté.");
 }
 
-// Récupérer le nombre actuel de timbrages pour l'utilisateur et la date donnée
-$stmt = $conn->prepare("SELECT COUNT(*) FROM t_timbrage WHERE ID_personne = ? AND date_timbrage = ?");
+// Récupérer toutes les positions déjà enregistrées pour l'utilisateur et la date donnée
+$stmt = $conn->prepare("SELECT position_timbrage FROM t_timbrage WHERE ID_personne = ? AND date_timbrage = ? ORDER BY position_timbrage ASC");
 $stmt->bind_param("is", $id, $date);
 $stmt->execute();
-$stmt->bind_result($count);
-$stmt->fetch();
+$result = $stmt->get_result();
+$existing_positions = [];
+while ($row = $result->fetch_assoc()) {
+    $existing_positions[] = $row['position_timbrage'];
+}
 $stmt->close();
 
-// Déterminer la position du nouveau timbrage
-$position = $count + 1;
-
-if ($position > 4) {
-    die("Limite de 4 timbrages atteinte pour aujourd'hui.");
+// Trouver la prochaine position disponible en respectant la rotation 1-4
+for ($i = 1; $i <= 4; $i++) {
+    if (!in_array($i, $existing_positions)) {
+        $position = $i;
+        break;
+    }
 }
 
-// Préparer et exécuter la requête d'insertion en utilisant une déclaration préparée
+// Si toutes les positions 1-4 sont prises, recommencer à 1
+if (!isset($position)) {
+    $position = 1;
+}
+
+// Insérer le timbrage
 $stmt = $conn->prepare("INSERT INTO t_timbrage (ID_personne, date_timbrage, heure_timbrage, type_timbrage, position_timbrage, manière_timbrage) VALUES (?, ?, ?, ?, ?, ?)");
-
-// Liaison des paramètres et types
-$maniere = "timbrage"; // Déclarer la variable manière_timbrage
-$stmt->bind_param("isssis", $id, $date, $heure, $type, $position, $maniere); // i pour integer, s pour string
-
-// Exécuter la requête
+$maniere = "timbrage";
+$stmt->bind_param("isssis", $id, $date, $heure, $type, $position, $maniere);
 $result = $stmt->execute();
 
-if($result) {
+if ($result) {
     echo "Données insérées avec succès.";
 } else {
     echo "Erreur lors de l'insertion des données : " . $conn->error;
