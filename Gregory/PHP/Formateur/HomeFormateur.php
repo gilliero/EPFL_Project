@@ -38,7 +38,7 @@ if (!isset($_SESSION["user_id"])) {
         <a href="../../../Jeremy/viewNotes.php" class="home-button">
             <button>
                 <img src="../../img/cahier.png" alt="Note" class="imgbtn">
-                <p>Consulté les notes</p>
+                <p>Consulter les notes</p>
             </button>
         </a>
 
@@ -47,7 +47,7 @@ if (!isset($_SESSION["user_id"])) {
         <a href="./viewFormateur.php" class="home-button">
             <button>
                 <img src="../../img/view.png" alt="Heure" class="imgbtn">
-                <p>Consulté les heures</p>
+                <p>Consulter les heures</p>
             </button>
         </a>
 
