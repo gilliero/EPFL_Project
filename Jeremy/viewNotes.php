@@ -8,10 +8,10 @@ if (!isset($_SESSION["user_role"]) || $_SESSION["user_role"] !== "Formateur") {
 }
 
 // Paramètres de connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "epfl_timbreuse";
+$servername = "db-ic.epfl.ch";
+$username = "icit_ictrip_adm";
+$password = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+$dbname = "icit_ictrip";
 
 // Connexion à la base de données
 $conn = new mysqli($servername, $username, $password, $dbname);

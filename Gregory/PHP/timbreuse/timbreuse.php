@@ -1,10 +1,10 @@
 <?php
 session_start(); // Démarrer la session si ce n'est pas déjà fait
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "epfl_timbreuse";
+$servername = "db-ic.epfl.ch";
+$username = "icit_ictrip_adm";
+$password = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+$dbname = "icit_ictrip";
 
 // Créer la connexion
 $conn = new mysqli($servername, $username, $password, $dbname);

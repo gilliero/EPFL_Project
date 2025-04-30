@@ -1,10 +1,10 @@
 <?php
 session_start(); // Démarrage de la session
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "epfl_db";
+$servername = "db-ic.epfl.ch";
+$username = "icit_ictrip_adm";
+$password = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+$dbname = "icit_ictrip";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

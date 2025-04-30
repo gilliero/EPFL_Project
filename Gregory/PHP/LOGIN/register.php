@@ -1,10 +1,10 @@
 <?php
 session_start();
  
-$serveur = "localhost";
-$utilisateur = "root";
-$motDePasse = "";
-$nomBaseDeDonnees = "EPFL_timbreuse";
+$serveur = "db-ic.epfl.ch";
+$utilisateur = "icit_ictrip_adm";
+$motDePasse = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+$nomBaseDeDonnees = "icit_ictrip";
  
 $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $nomBaseDeDonnees);
  

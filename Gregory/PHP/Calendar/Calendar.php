@@ -40,10 +40,10 @@ if (!isset($_SESSION["user_id"])) {
         <h1>Gestion des heures</h1>
         <p class="time" id="dateTime"></p>
         <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "epfl_timbreuse";
+    $servername = "db-ic.epfl.ch";
+    $username = "icit_ictrip_adm";
+    $password = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+    $dbname = "icit_ictrip";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
     

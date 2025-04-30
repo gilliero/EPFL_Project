@@ -10,10 +10,10 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 // Connexion à la base de données (remplacez les détails de connexion par les vôtres)
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$dbname = "epfl_timbreuse";
+$servername = "db-ic.epfl.ch";
+$username = "icit_ictrip_adm";
+$password = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+$dbname = "icit_ictrip";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

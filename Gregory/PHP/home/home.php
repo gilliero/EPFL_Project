@@ -1,9 +1,9 @@
 <?php
 // Connexion à la base de données (à adapter selon vos paramètres)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "EPFL_timbreuse";
+$servername = "db-ic.epfl.ch";
+$username = "icit_ictrip_adm";
+$password = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+$dbname = "icit_ictrip";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

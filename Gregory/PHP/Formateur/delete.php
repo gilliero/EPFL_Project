@@ -10,10 +10,10 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 // Variables de connexion à la base de données
-$serveurNom = "127.0.0.1";
-$nomUtilisateur = "root";
-$motDePasse = "";
-$nomBaseDeDonnees = "epfl_timbreuse";
+$serveurNom = "db-ic.epfl.ch";
+$nomUtilisateur = "icit_ictrip_adm";
+$motDePasse = "GdMrL0pZFGKnV8hyntQjFeKKmAbSSQRK";
+$nomBaseDeDonnees = "icit_ictrip";
 
 // Connexion à la base de données
 $connexion = new mysqli($serveurNom, $nomUtilisateur, $motDePasse, $nomBaseDeDonnees);
