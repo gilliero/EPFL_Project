@@ -51,6 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../../PHP/home/home.php");
         } elseif ($role == 'Formateur') {
             header("Location: ../../PHP/Formateur/HomeFormateur.php");
+        } elseif ($role == 'Admin') {
+            header("Location: ../../Admin/Adminhome.php");
         } else {
             // Affiche un message d'erreur
             echo "Nom d'utilisateur ou mot de passe incorrect.";
