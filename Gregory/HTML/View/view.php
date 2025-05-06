@@ -128,7 +128,7 @@ $current_year = date('Y');
         if ($result->num_rows > 0) {
             echo "<div class='tableau centered-div'>";
             echo "<table>";
-            echo "<tr><th>Semaine</th><th>Heures travaillées</th><th>Détaille</th></tr>";
+            echo "<tr><th>Semaine</th><th>Heures travaillées</th><th>Détails</th></tr>";
             while ($row = $result->fetch_assoc()) {
                 $semaine = $row["semaine"];
                 $annee = $row["annee"];
@@ -161,7 +161,7 @@ $current_year = date('Y');
                 echo "<tr>";
                 echo "<td>Semaine du $date_semaine_debut_format au $date_semaine_fin_format $annee</td>";
                 echo "<td>$heures_travaillees</td>";
-                echo "<td><a href=\"./viewday.php?semaine=$semaine&annee=$annee\">Voir détails</a></td>";
+                echo "<td><a href=\"./viewday.php?semaine=$semaine&annee=$annee\">Voir</a></td>";
                 echo "</tr>";
             }
             echo "</table>";

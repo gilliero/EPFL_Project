@@ -127,7 +127,7 @@ $connexion->close();
         </div>
     </div>
 </header>
-<a href="./homeFormateur.php" class="home-button">
+<a href="./HomeFormateur.php" class="home-button">
     <img src="../../img/home.png" alt="home" class="imgbtn">
 </a>
 <main>
