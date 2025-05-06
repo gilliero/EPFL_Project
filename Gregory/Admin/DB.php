@@ -87,6 +87,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["table"]) && in_array(
     </style>
 </head>
 <body>
+<header>
+        <img src="../../img/epfllogo.png" alt="EPFL Logo">
+        <!-- Utilisation du dropdown -->
+        <div class="dropdown">
+            <p><?php echo $_SESSION["user_prenom"] . " " . $_SESSION["user_nom"] ?></p>
+            <div class="dropdown-content">
+                <!-- Bouton de déconnexion -->
+                <button onclick="logout()">Déconnexion</button>
+            </div>
+        </div>
+    </header>
+    
+    <a href="../../PHP/home/home.php" class="home-button">
+        <img src="../../img/home.png" alt="home" class="imgbtn">
+    </a>
     <h1>Gestion DB</h1>
 
     <form method="POST">
