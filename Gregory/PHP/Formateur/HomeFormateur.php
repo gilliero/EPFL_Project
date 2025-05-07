@@ -51,6 +51,14 @@ if (!isset($_SESSION["user_id"])) {
             </button>
         </a>
 
+        <a href="../../Admin/DB.php" class="home-button">
+            <button>
+                <img src="../../img/DB.png" alt="View" class="imgbtn">
+                <p>Base de donnée</p>
+            </button>
+        </a>
+    </main>
+
     </main>
     <script>
         // Fonction de déconnexion

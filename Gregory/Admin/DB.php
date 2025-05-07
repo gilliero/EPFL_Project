@@ -51,44 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["table"]) && in_array(
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="stylesheet" href="./admin.css">
     <meta charset="UTF-8">
     <title>Gestion DB</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        h1 {
-            color: #333;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 25px;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #eee;
-        }
-        select, button {
-            padding: 8px;
-            margin-top: 10px;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-        .action-buttons {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
 <header>
-        <img src="../../img/epfllogo.png" alt="EPFL Logo">
+        <img src="../img/epfllogo.png" alt="EPFL Logo">
         <!-- Utilisation du dropdown -->
         <div class="dropdown">
             <p><?php echo $_SESSION["user_prenom"] . " " . $_SESSION["user_nom"] ?></p>
@@ -99,8 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["table"]) && in_array(
         </div>
     </header>
     
-    <a href="../../PHP/home/home.php" class="home-button">
-        <img src="../../img/home.png" alt="home" class="imgbtn">
+    <a href="./Adminhome.php" class="home-button">
+        <img src="../img/home.png" alt="home" class="imgbtn">
     </a>
     <h1>Gestion DB</h1>
 
@@ -147,5 +116,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["table"]) && in_array(
     <?php elseif ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
         <p>Aucune donnée trouvée dans la table sélectionnée.</p>
     <?php endif; ?>
+    <script>
+        // Fonction de déconnexion
+        function logout() {
+            // Redirige vers la page de déconnexion
+            window.location.href = "../PHP/LOGIN/logout.php";
+        }
+    </script>
 </body>
 </html>

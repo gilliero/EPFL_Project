@@ -76,14 +76,6 @@ if (!isset($_SESSION["user_id"])) {
             </button>
         </a>
 
-        <a href="./DB.php" class="home-button">
-            <button>
-                <img src="../img/DB.png" alt="View" class="imgbtn">
-                <p>Consulter les heures</p>
-            </button>
-        </a>
-    </main>
-
     <script>
         // Fonction de déconnexion
         function logout() {

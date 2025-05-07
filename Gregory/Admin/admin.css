@@ -29,6 +29,28 @@ h1 {
 }
 
 .home-button {
-    text-decoration: none;
-    margin: 10px;
+    margin-top: 20px; /* Ajoutez une marge en haut pour espacer du header */
+    text-align: center;
+}
+
+.home-button button {
+    width: 50px; /* Augmentez la largeur du bouton pour accommoder l'image agrandie */
+    height: 50px; /* Ajustez la hauteur en consÃ©quence */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Couleur de fond du bouton */
+    border: 1px solid #ccc; /* Bordure du bouton */
+    border-radius: 50%; /* Coins arrondis pour crÃ©er un aspect de cercle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre lÃ©gÃ¨re pour un effet de profondeur */
+}
+
+.home-button img {
+    width: 50px; /* Ajustez la taille de l'image agrandie */
+}
+
+.home-button p {
+    margin-top: 5px;
+    font-size: 12px; /* Taille de la police du texte du bouton */
 }

@@ -57,12 +57,13 @@ if ($id) {
     <!DOCTYPE html>
     <html lang="fr">
     <head>
+    <link rel="stylesheet" href="./admin.css">
         <meta charset="UTF-8">
         <title>Modifier un enregistrement</title>
     </head>
     <body>
     <header>
-        <img src="../../img/epfllogo.png" alt="EPFL Logo">
+    <img src="../img/epfllogo.png" alt="EPFL Logo">
         <!-- Utilisation du dropdown -->
         <div class="dropdown">
             <p><?php echo $_SESSION["user_prenom"] . " " . $_SESSION["user_nom"] ?></p>
@@ -73,8 +74,8 @@ if ($id) {
         </div>
     </header>
     
-    <a href="../../PHP/home/home.php" class="home-button">
-        <img src="../../img/home.png" alt="home" class="imgbtn">
+    <a href="./Adminhome.php" class="home-button">
+        <img src="../img/home.png" alt="home" class="imgbtn">
     </a>
         <h1>Modifier une entrée de <?= htmlspecialchars($table) ?></h1>
         <form method="POST">
@@ -142,5 +143,12 @@ if ($result) {
             <?php endforeach; ?>
         </tbody>
     </table>
+    <script>
+        // Fonction de déconnexion
+        function logout() {
+            // Redirige vers la page de déconnexion
+            window.location.href = "../PHP/LOGIN/logout.php";
+        }
+    </script>
 </body>
 </html>
