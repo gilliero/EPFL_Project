@@ -47,21 +47,21 @@ if (!isset($_SESSION["user_id"])) {
     <main>
         <h1>Home</h1>
 
-        <a href="../../HTML/timbreuse/timbreuse.php" class="home-button">
+        <a href="../../HTML/timbreuse/timbreusestagiaire.php" class="home-button">
             <button>
                 <img src="../../img/timbrage.png" alt="Timbrage" class="imgbtn">
                 <p>Timbrage</p>
             </button>
         </a>
 
-        <a href="../../PHP/Calendar/Calendar.php" class="home-button">
+        <a href="../../PHP/Calendar/Calendarstagiaire.php" class="home-button">
             <button>
                 <img src="../../img/horlorge.png" alt="Heure" class="imgbtn">
                 <p>Heure</p>
             </button>
         </a>
 
-        <a href="../../HTML/View/view.php" class="home-button">
+        <a href="../../HTML/View/viewstagiaire.php" class="home-button">
             <button>
                 <img src="../../img/view.png" alt="View" class="imgbtn">
                 <p>Consulter les heures</p>
