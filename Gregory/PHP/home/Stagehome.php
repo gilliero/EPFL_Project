@@ -18,7 +18,7 @@ session_start();
 // Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION["user_id"])) {
     // Redirige vers la page de connexion
-    header("Location: ../../index.html");
+    header("Location: ../../../index.html");
     exit(); // Assure que le script s'arrête après la redirection
 }
 ?>
@@ -33,7 +33,7 @@ if (!isset($_SESSION["user_id"])) {
 </head>
 <body>
     <header>
-        <img src="../img/epfllogo.png" alt="EPFL Logo">
+        <img src="../../img/epfllogo.png" alt="EPFL Logo">
         <!-- Utilisation du dropdown -->
         <div class="dropdown">
             <p><?php echo $_SESSION["user_prenom"] . " " . $_SESSION["user_nom"] ?></p>
@@ -46,32 +46,24 @@ if (!isset($_SESSION["user_id"])) {
     
     <main>
         <h1>Home</h1>
-        
-        <!-- Boutons restants -->
-        <a href="../../Jeremy/addNotes.php" class="home-button">
-            <button>
-                <img src="../img/cahier.png" alt="Note" class="imgbtn">
-                <p>Note</p>
-            </button>
-        </a>
 
-        <a href="../HTML/timbreuse/timbreuse.php" class="home-button">
+        <a href="../../HTML/timbreuse/timbreuse.php" class="home-button">
             <button>
-                <img src="../img/timbrage.png" alt="Timbrage" class="imgbtn">
+                <img src="../../img/timbrage.png" alt="Timbrage" class="imgbtn">
                 <p>Timbrage</p>
             </button>
         </a>
 
-        <a href="../PHP/Calendar/Calendar.php" class="home-button">
+        <a href="../../PHP/Calendar/Calendar.php" class="home-button">
             <button>
-                <img src="../img/horlorge.png" alt="Heure" class="imgbtn">
+                <img src="../../img/horlorge.png" alt="Heure" class="imgbtn">
                 <p>Heure</p>
             </button>
         </a>
 
-        <a href="../HTML/View/view.php" class="home-button">
+        <a href="../../HTML/View/view.php" class="home-button">
             <button>
-                <img src="../img/view.png" alt="View" class="imgbtn">
+                <img src="../../img/view.png" alt="View" class="imgbtn">
                 <p>Consulter les heures</p>
             </button>
         </a>
@@ -80,7 +72,7 @@ if (!isset($_SESSION["user_id"])) {
         // Fonction de déconnexion
         function logout() {
             // Redirige vers la page de déconnexion
-            window.location.href = "../PHP/LOGIN/logout.php";
+            window.location.href = "../LOGIN/logout.php";
         }
     </script>
 </body>

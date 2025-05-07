@@ -85,9 +85,8 @@ if ($stmt->execute()) {
             } elseif ($userRole == 'Formateur') {
                 // Redirige vers la page d'accueil des formateurs
                 header("Location: ../../PHP/Formateur/HomeFormateur.php");
-            } elseif ($userRole == 'Admin') {
-                // Redirige vers la page d'accueil des formateurs
-                header("Location: ../../Admin/Adminhome.php");
+            } elseif ($userRole == 'Stagiaire') {
+            header("Location: ../home/Stagehome.php");
             }
             exit(); // Terminer le script après la redirection
         } else {
