@@ -80,7 +80,7 @@ if (!isset($_SESSION["user_id"])) {
         // Fonction de déconnexion
         function logout() {
             // Redirige vers la page de déconnexion
-            window.location.href = "../LOGIN/logout.php";
+            window.location.href = "../PHP/LOGIN/logout.php";
         }
     </script>
 </body>
