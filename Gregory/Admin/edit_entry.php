@@ -74,7 +74,7 @@ if ($id) {
         </div>
     </header>
     
-    <a href="./Adminhome.php" class="home-button">
+    <a href="../PHP/Formateur/HomeFormateur.php" class="home-button">
         <img src="../img/home.png" alt="home" class="imgbtn">
     </a>
         <h1>Modifier une entrée de <?= htmlspecialchars($table) ?></h1>

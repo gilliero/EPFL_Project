@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["table"]) && in_array(
         </div>
     </header>
     
-    <a href="./Adminhome.php" class="home-button">
+    <a href="../PHP/Formateur/HomeFormateur.php" class="home-button">
         <img src="../img/home.png" alt="home" class="imgbtn">
     </a>
     <h1>Gestion DB</h1>
