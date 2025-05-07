@@ -38,7 +38,7 @@ $nombre_timbrage = $result->num_rows;
 if ($result->num_rows > 0) {
     // L'utilisateur a déjà timbré aujourd'hui, vous pouvez prendre des mesures appropriées ici
     // Par exemple, rediriger l'utilisateur avec un message approprié
-    header("Location: timbreuse2.php");
+    header("Location: timbreusestagiaire2.php");
     exit();
 }
 
@@ -92,7 +92,7 @@ $button_visible = $nombre_timbrage < 4;
             <button id="toggleButton">Pause</button>
         <?php endif; ?>
         <p>
-            <a class="link-calendar" href="../../PHP/Calendar/Calendar.php">Entrez vos heures manuellement</a>
+            <a class="link-calendar" href="../../PHP/Calendar/Calendarstagiaire.php">Entrez vos heures manuellement</a>
         </p>   
     </main>
 

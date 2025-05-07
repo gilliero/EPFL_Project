@@ -80,7 +80,7 @@ if (!isset($_SESSION["user_id"])) {
         }
     </script>
     <script src="../../JS/Calendar/homedate&heure.js"></script>
-    <script src="../../JS/Calendar/Calendar.js"></script>
+    <script src="../../JS/Calendar/Calendarstagiaire.js"></script>
 </body>
 </html>
 

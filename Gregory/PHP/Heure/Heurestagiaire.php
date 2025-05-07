@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    header("Location: ../Calendar/Calendar.php");
+    header("Location: ../Calendar/Calendarstagiaire.php");
     exit();
 }
 

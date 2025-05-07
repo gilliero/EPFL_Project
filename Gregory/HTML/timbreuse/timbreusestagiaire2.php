@@ -34,7 +34,7 @@ if ($result === false) {
 }
 
 if ($result->num_rows == 0) {
-    header("Location: timbreuse.php");
+    header("Location: timbreusestagiaire.php");
     exit();
 }
 
@@ -50,7 +50,7 @@ if ($resultLastTimbrage === false) {
 $lastTimbrageType = ($resultLastTimbrage->num_rows > 0) ? $resultLastTimbrage->fetch_assoc()["type_timbrage"] : null;
 
 if ($lastTimbrageType === 'in') {
-    header("Location: timbreuse3.php");
+    header("Location: timbreusestagiaire3.php");
     exit();
 }
 
@@ -129,7 +129,7 @@ if (isset($resultPreviousTimbrages)) {
 
         <button id="toggleButton" <?php if ($countTimbrages >= 4) echo 'style="display:none;"'; ?>>Pause</button>
         <p>
-            <a class="link-calendar" href="../../PHP/Calendar/Calendar.php">Entrez vos heures manuellement</a>
+            <a class="link-calendar" href="../../PHP/Calendar/Calendarstagiaire.php">Entrez vos heures manuellement</a>
         </p>  
     </main>
 

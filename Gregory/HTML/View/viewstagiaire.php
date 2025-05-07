@@ -161,7 +161,7 @@ $current_year = date('Y');
                 echo "<tr>";
                 echo "<td>Semaine du $date_semaine_debut_format au $date_semaine_fin_format $annee</td>";
                 echo "<td>$heures_travaillees</td>";
-                echo "<td><a href=\"./viewday.php?semaine=$semaine&annee=$annee\">Voir</a></td>";
+                echo "<td><a href=\"./viewdaystagiaire.php?semaine=$semaine&annee=$annee\">Voir</a></td>";
                 echo "</tr>";
             }
             echo "</table>";
