@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+// Si l'utilisateur est déjà connecté, on le redirige
+if (isset($_SESSION["user_id"])) {
+    header("Location: ./connected.php");
+    exit();
+}
+
 session_start();
  
 $serveur = "db-ic.epfl.ch";

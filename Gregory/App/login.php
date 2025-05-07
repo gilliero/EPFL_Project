@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+// Si l'utilisateur est déjà connecté, on le redirige
+if (isset($_SESSION["user_id"])) {
+    header("Location: ./connected.php");
+    exit();
+}
+
 // Connexion à la base de données (à adapter selon vos paramètres)
 $servername = "db-ic.epfl.ch";
 $username = "icit_ictrip_adm";
