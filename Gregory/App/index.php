@@ -1,15 +1,21 @@
+<?php
+
+session_start();
+// Si l'utilisateur est déjà connecté, on le redirige
+if (isset($_SESSION["user_id"])) {
+    header("Location: ./connected.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>EPFL - Connexion</title>
-    <link rel="stylesheet" href="../CSS/LOGIN/login.css">
+    <link rel="stylesheet" href="./login.css">
 </head>
 <body>
-    <header>
-        <img src="../img/epfllogo.png" alt="EPFL Logo">
-    </header>
-    
     <main>
         <h1>Connexion</h1>
         <form action="./login.php" method="post">
@@ -19,7 +25,6 @@
         </form>
         <br>
         <br>
-        <a href="./Register.html">Crée un compte utilisateur</a>
     </main>
 </body>
 </html>
